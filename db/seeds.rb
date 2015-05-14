@@ -13,5 +13,5 @@ require 'faker'
 end
 
 10.times do
-  Note.create(title: Faker::Name.title, body_text: Faker::Lorem.paragraph(30 + rand(70)), user: User.all.sample)
+  Note.create(title: Faker::Name.title, body: Faker::Lorem.paragraph(30 + rand(70)), user: User.all.sample)
 end

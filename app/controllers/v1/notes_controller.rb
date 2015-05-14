@@ -1,11 +1,15 @@
 module V1
   class NotesController < ApplicationController
-    skip_before_action :authenticate_user_from_token!, only: [:index, :show]
-    
+    require 'pry'
+    # skip_before_action :authenticate_user_from_token!, only: [:index, :show]
+    before_action :authenticate_user_from_token!
     # GET /v1/notes
     # Get all the notes
     def index
-      @notes = Note.includes(:user).order(created_at: :desc).all
+#      @notes = Note.includes(:user).order(created_at: :desc).all
+
+      @notes = @current_api_user.notes.includes(:user).order(updated_at: :desc).all
+#      .includes(:user).order(updated_at: desc).all
       render json: @notes, each_serializer: NotesSerializer
     end
 
