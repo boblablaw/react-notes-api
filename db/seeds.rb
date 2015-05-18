@@ -15,3 +15,9 @@ end
 10.times do
   Note.create(title: Faker::Name.title, body: Faker::Lorem.paragraph(30 + rand(70)), user: User.all.sample)
 end
+
+User.create(email: 'jasondavidbeatty@gmail.com', username: 'boblablaw', password: 'password')
+
+10.times do
+  Note.create( title: Faker::Lorem.word, body: Faker::Lorem.paragraph(30 + rand(70)), user: User.find_by(email: 'jasondavidbeatty@gmail.com') )
+end
