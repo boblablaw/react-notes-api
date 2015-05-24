@@ -1,7 +1,7 @@
 module V1
   class NotesSerializer < ActiveModel::Serializer
     
-    attributes :title, :created_at, :abstract, :id
+    attributes :title, :created_at, :updated_at, :abstract, :id
     has_one :user, serializer: V1::UserSerializer
 
     def abstract

@@ -22,4 +22,5 @@
 en:
   hello: "Hello world"
   sessions_controller:
-    invalid_login_attempt: 'Invalid username or password.'
+    invalid_login_attempt: 'Invalid email address or password.'
+  user_create_error: 'email address already in use'
