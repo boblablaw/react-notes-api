@@ -44,7 +44,7 @@ module V1
     private
 
     def note_params
-      params.require(:note).permit(:title, :body).merge(user: current_user)
+      params.require(:note).permit(:title, :body_text, :body_html).merge(user: current_user)
     end
 
     def find_note

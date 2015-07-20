@@ -3,6 +3,7 @@ class Note < ActiveRecord::Base
   scope :ordered, -> { order('created_at DESC') }
   
   validates :title, presence: true
-  validates :body, presence: true
+  validates :body_text, presence: true
+  validates :body_html, presence: true
   validates :user, presence: true
 end
